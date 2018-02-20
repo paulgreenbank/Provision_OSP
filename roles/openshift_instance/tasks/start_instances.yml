@@ -2,9 +2,16 @@
 
 # Start Openshift server instance
 
+  - name: Checking server instance "{{ instance_name }}" status
+    os_server_facts:
+      cloud: ospcloud
+      server: "{{ instance_name }}"
+    register: server_state
+
   - name: Start server instance "{{ instance_name }}"
     os_server_action:
       action: start
       cloud: ospcloud
       server: "{{ instance_name }}"
       wait: yes
+    when: openstack_servers.0.status != "ACTIVE"

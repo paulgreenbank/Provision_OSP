@@ -2,7 +2,7 @@
 
 # Playbook to destroy Openshift instances, leaving networking configured
 
-- hosts: jumpbox
+- hosts: all
   tasks:
 
   - name: Destroy 3Tier application database instance

@@ -1,0 +1,16 @@
+---
+# Openshift access key setup
+
+  - name: Generate access key files
+    user:
+      name: "{{ ansible_env.USER }}"
+      generate_ssh_key: yes
+      ssh_key_bits: 2048
+      ssh_key_file: .ssh/ansible_id_rsa
+
+  - name: Distribute SSH key
+    os_keypair:
+      cloud: ospcloud
+      state: present
+      name: ansible_ssh
+      public_key_file: "{{ ansible_env.HOME }}/.ssh/ansible_id_rsa.pub"

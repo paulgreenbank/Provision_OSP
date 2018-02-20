@@ -1,0 +1,59 @@
+---
+# Generic role to create Openshift network and subnets
+
+  - name: Create Openshift external network
+    os_network:
+      cloud: ospcloud  
+      state: present 
+      name: external_net  
+      external: true  
+
+  - name: Create Openshift internal network
+    os_network:
+      cloud: ospcloud
+      state: present
+      name: internal_net
+      external: false
+
+  - name: Create Openshift external subnets
+    os_subnet:
+      cloud: ospcloud
+      state: present
+      network_name: external_net
+      name: external_sub
+      cidr: 10.10.10.0/24
+      dns_nameservers:
+        - 8.8.8.7
+        - 8.8.8.8
+      host_routes:
+        - destination: 0.0.0.0/0
+          nexthop: 10.10.10.1
+        - destination: 192.168.0.0/24
+          nexthop: 192.168.0.1
+      
+  - name: Create Openshift internal subnet
+    os_subnet:
+      cloud: ospcloud
+      state: present
+      network_name: internal_net
+      name: internal_sub
+      cidr: 20.20.20.0/24
+      dns_nameservers:
+        - 8.8.8.7
+        - 8.8.8.8
+      host_routes:
+        - destination: 0.0.0.0/0
+          nexthop: 10.10.10.1
+        - destination: 192.168.0.0/24
+          nexthop: 192.168.0.1
+
+  - name: Create Openshift router
+    os_router:
+      cloud: ospcloud
+      state: present
+      name: osp_router
+      network: external_net
+      external_fixed_ips:
+        - subnet: external_sub
+      interfaces:
+        - internal_sub

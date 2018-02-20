@@ -1,0 +1,9 @@
+---
+
+# Destroy Openshift server instance
+
+  - name: Destroy server instance
+    os_server:
+      state: absent
+      cloud: ospcloud
+      name: "{{ instance_name }}"

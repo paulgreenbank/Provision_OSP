@@ -1,0 +1,10 @@
+---
+
+# Start Openshift server instance
+
+  - name: Start server instance "{{ instance_name }}"
+    os_server_action:
+      action: start
+      cloud: ospcloud
+      server: "{{ instance_name }}"
+      wait: yes

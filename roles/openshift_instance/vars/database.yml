@@ -1,0 +1,6 @@
+---
+instance_name: appdb1
+group: appsdb
+deployment: dev
+instance_flavor: m2.small
+security_group: database_servers

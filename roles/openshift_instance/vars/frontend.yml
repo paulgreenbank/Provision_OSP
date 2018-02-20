@@ -1,0 +1,6 @@
+---
+instance_name: frontend
+group: frontends
+deployment: dev
+instance_flavor: m2.small
+security_group: frontend_servers

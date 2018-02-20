@@ -1,0 +1,13 @@
+---
+
+# Setup Openshift Nova flavor for container deployment
+
+  - name: Create Nova flavor
+    os_nova_flavor:
+      cloud: ospcloud
+      state: present
+      name: m2.small
+      ram: 2048
+      vcpus: 1
+      disk: 10
+

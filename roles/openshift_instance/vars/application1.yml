@@ -1,0 +1,6 @@
+---
+instance_name: app1
+group: apps
+deployment: dev
+instance_flavor: m2.small
+security_group: application_servers

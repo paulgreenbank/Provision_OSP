@@ -1,0 +1,32 @@
+---
+
+# Playbook to destroy Openshift instances, leaving networking configured
+
+- hosts: jumpbox
+  gather_facts: false
+  tasks:
+
+  - name: Start 3Tier application database instance
+    include_role:
+      name: openshift_instance
+      tasks_from: start_instances
+      vars_from: database.yml
+
+  - name: Start 3Tier application application1 instance
+    include_role:
+      name: openshift_instance
+      tasks_from: start_instances
+      vars_from: application1.yml
+
+  - name: Start 3Tier application application2 instance
+    include_role:
+      name: openshift_instance
+      tasks_from: start_instances
+      vars_from: application2.yml
+
+  - name: Start 3Tier application frontend instance
+    include_role:
+      name: openshift_instance
+      tasks_from: start_instances
+      vars_from: frontend.yml
+

@@ -2,7 +2,7 @@
 
 # Playbook to create Openshift instances, setup networking and security
 
-- hosts: jumpbox
+- hosts: all
   
   roles:
     - openshift_network

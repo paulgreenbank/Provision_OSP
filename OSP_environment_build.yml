@@ -1,41 +1,41 @@
 ---
 
-# Playbook to create Openshift instances, setup networking and security
+# Playbook to create Openstack instances, setup networking and security
 
 - hosts: all
   
   roles:
-    - openshift_network
-    - openshift_keypair
-    - openshift_security
-    - openshift_flavor
+    - openstack_network
+    - openstack_keypair
+    - openstack_security
+    - openstack_flavor
 
   tasks:
-# Create Openshift database instance
+# Create Openstack database instance
 
   - name: Create 3Tier application database instance
     include_role:
-      name: openshift_instance
+      name: openstack_instance
       vars_from: database.yml
 
-# Create Openshift application1 instance
+# Create Openstack application1 instance
 
   - name: Create 3Tier application application1 instance
     include_role:
-      name: openshift_instance
+      name: openstack_instance
       vars_from: application1.yml
 
-# Create Openshift application2 instance
+# Create Openstack application2 instance
 
   - name: Create 3Tier application application2 instance
     include_role:
-      name: openshift_instance
+      name: openstack_instance
       vars_from: application2.yml
 
-# Create Openshift frontend instances
+# Create Openstack frontend instances
 
   - name: Create 3Tier application frontend instance
     include_role:
-      name: openshift_instance
+      name: openstack_instance
       vars_from: frontend.yml
 

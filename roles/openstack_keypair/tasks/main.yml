@@ -1,5 +1,5 @@
 ---
-# Openshift access key setup
+# Openstack access key setup
 
   - name: Generate access key files
     user:

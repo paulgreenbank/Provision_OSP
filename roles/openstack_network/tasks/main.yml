@@ -1,21 +1,21 @@
 ---
-# Generic role to create Openshift network and subnets
+# Generic role to create Openstack network and subnets
 
-  - name: Create Openshift external network
+  - name: Create Openstack external network
     os_network:
       cloud: ospcloud  
       state: present 
       name: external_net  
       external: true  
 
-  - name: Create Openshift internal network
+  - name: Create Openstack internal network
     os_network:
       cloud: ospcloud
       state: present
       name: internal_net
       external: false
 
-  - name: Create Openshift external subnets
+  - name: Create Openstack external subnets
     os_subnet:
       cloud: ospcloud
       state: present
@@ -31,7 +31,7 @@
         - destination: 192.168.0.0/24
           nexthop: 192.168.0.1
       
-  - name: Create Openshift internal subnet
+  - name: Create Openstack internal subnet
     os_subnet:
       cloud: ospcloud
       state: present
@@ -47,7 +47,7 @@
         - destination: 192.168.0.0/24
           nexthop: 192.168.0.1
 
-  - name: Create Openshift router
+  - name: Create Openstack router
     os_router:
       cloud: ospcloud
       state: present

@@ -1,6 +1,6 @@
 ---
 
-# Playbook to destroy Openshift instances, leaving networking configured
+# Playbook to destroy Openstack instances, leaving networking configured
 
 - hosts: all
   gather_facts: false
@@ -8,25 +8,25 @@
 
   - name: Start 3Tier application database instance
     include_role:
-      name: openshift_instance
+      name: openstack_instance
       tasks_from: start_instances
       vars_from: database.yml
 
   - name: Start 3Tier application application1 instance
     include_role:
-      name: openshift_instance
+      name: openstack_instance
       tasks_from: start_instances
       vars_from: application1.yml
 
   - name: Start 3Tier application application2 instance
     include_role:
-      name: openshift_instance
+      name: openstack_instance
       tasks_from: start_instances
       vars_from: application2.yml
 
   - name: Start 3Tier application frontend instance
     include_role:
-      name: openshift_instance
+      name: openstack_instance
       tasks_from: start_instances
       vars_from: frontend.yml
 

@@ -1,6 +1,6 @@
 ---
 
-# Setup Openshift security groups for access
+# Setup Openstack security groups for access
 
   - name: Create application server security group
     os_security_group:

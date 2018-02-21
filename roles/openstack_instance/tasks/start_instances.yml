@@ -1,6 +1,6 @@
 ---
 
-# Start Openshift server instance
+# Start Openstack server instance
 
   - name: Checking server instance "{{ instance_name }}" status
     os_server_facts:

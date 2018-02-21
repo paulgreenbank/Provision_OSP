@@ -1,6 +1,6 @@
 ---
 
-# Create and configure Openshift server instance
+# Create and configure Openstack server instance
 
   - name: Create server instance
     os_server:

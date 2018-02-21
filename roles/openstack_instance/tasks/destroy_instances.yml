@@ -1,6 +1,6 @@
 ---
 
-# Destroy Openshift server instance
+# Destroy Openstack server instance
 
   - name: Destroy server instance
     os_server:

@@ -1,6 +1,6 @@
 ---
 
-# Setup Openshift Nova flavor for container deployment
+# Setup Openstack Nova flavor for container deployment
 
   - name: Create Nova flavor
     os_nova_flavor:

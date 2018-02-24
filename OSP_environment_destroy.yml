@@ -2,7 +2,7 @@
 
 # Playbook to destroy Openstack instances, leaving networking configured
 
-- hosts: all
+- hosts: jumpbox
   tasks:
 
   - name: Destroy 3Tier application database instance

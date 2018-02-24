@@ -2,7 +2,7 @@
 
 # Playbook to create Openstack instances, setup networking and security
 
-- hosts: all
+- hosts: jumpbox
   
   roles:
     - openstack_network

@@ -1,6 +1,30 @@
 ---
+## RedHat Ansible Boot Camp homework assignment
+## Playbook have been written as a PoC for a 3Tier Application deployment
+## All playbook have been written via Ansible Core and used in Ansible Tower
 
-# Playbook to destroy Openstack instances, leaving networking configured
+## Created a written by Paul Greenbank - Technical Consultant for Open System Specialists
+
+## Playbook description:
+#
+# Starts the OpenStack instances defined in the seperate vars files if they are not in the 
+# `active` state, this playbook was created as it was found that when the RedHat Lab Openstack
+# environment was powered down and started the OpenStack instances did not start in their 
+# previous state prior to shutdown. 
+# This playbook is not called in the 3Tier Application workflow as the environment will be 
+# destroyed on failure, re-created and started.
+# This playbook was called via the CLI and then as an adhoc job in Ansible Tower when the RedHat
+# OpenStack Lab instance was started saving development time of having to teardown the existing 
+# environment and rebuilding it.  
+#
+
+## Playbook enhancements post PoC:
+#
+# Variablization to reduce duplication in calling the `start_instances` role.
+#
+#
+
+# Playbook to start Openstack instances, if they are not in the `active` state.
 
 - hosts: jumpbox
   gather_facts: false

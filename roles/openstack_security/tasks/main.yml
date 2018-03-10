@@ -1,4 +1,23 @@
 ---
+## RedHat Ansible Boot Camp homework assignment
+## Playbook have been written as a PoC for a 3Tier Application deployment
+## All playbook have been written via Ansible Core and used in Ansible Tower
+
+## Created a written by Paul Greenbank - Technical Consultant for Open System Specialists
+
+## Role description:
+#
+# 3 Security groups are created for each component of the application, `application`, `database`
+# & `frontend`. Rules are then assigned to the security groups to open ports necessary for the
+# applications internal and external connectivity.
+#
+
+## Role enhancements post PoC:
+#
+# variablization of these modules to reduce the duplication in calling each module 3 times, it would also
+# allow for more security groups to be created as the application grows without any changes to the role
+# itself.
+#
 
 # Setup Openstack security groups for access
 

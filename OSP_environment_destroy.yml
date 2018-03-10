@@ -1,4 +1,24 @@
 ---
+## RedHat Ansible Boot Camp homework assignment
+## Playbook have been written as a PoC for a 3Tier Application deployment
+## All playbook have been written via Ansible Core and used in Ansible Tower
+
+## Created a written by Paul Greenbank - Technical Consultant for Open System Specialists
+
+## Playbook description:
+#
+# Destroys OpenStack instances created, this is used for rollback of the deployment in
+# Ansible Tower workflow but can also be called from the CLI.
+# Due to the complexity of tearing down the OpenStack networking this will remain and only the 
+# instances themselves will be destroyed.
+#
+
+## Playbook enhancements post PoC:
+#
+# Variablization for the `openstack_instance` role to use `with_subelements` would reduce the duplication of calling
+# this role 3 seperate times, it would also mean adding more components to the application would not require modification to the
+# role code in multiple roles - creation and destroy.
+#
 
 # Playbook to destroy Openstack instances, leaving networking configured
 

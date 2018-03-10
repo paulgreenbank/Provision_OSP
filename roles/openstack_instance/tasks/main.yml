@@ -1,4 +1,21 @@
 ---
+## RedHat Ansible Boot Camp homework assignment
+## Playbook have been written as a PoC for a 3Tier Application deployment
+## All playbook have been written via Ansible Core and used in Ansible Tower
+
+## Created a written by Paul Greenbank - Technical Consultant for Open System Specialists
+
+## Role description:
+#
+# Creates OpenStack instances based on the already defined instance `flavor` and assigns
+# instance to a security group for access / connectivity.
+# As part of the instance creation two items are injected into the instance
+#  1. cloud-user SSH public key for access
+#  2. Customs repofile for software repositories
+# A floating IP address is assigned to the instance and we wait for SSH to become available before
+# moving on to create the next instance.
+# The floating IP address is output via debug after it is assigned.
+#
 
 # Create and configure Openstack server instance
 

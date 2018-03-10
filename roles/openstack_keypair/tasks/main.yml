@@ -1,4 +1,16 @@
 ---
+## RedHat Ansible Boot Camp homework assignment
+## Playbook have been written as a PoC for a 3Tier Application deployment
+## All playbook have been written via Ansible Core and used in Ansible Tower
+
+## Created a written by Paul Greenbank - Technical Consultant for Open System Specialists
+
+## Role description:
+#
+# Creates SSH 2048 Key pair which is then distributed to Nova and then injected into
+# newly created instances in ospcloud instance.
+#
+
 # Openstack access key setup
 
   - name: Generate access key files

@@ -1,4 +1,17 @@
 ---
+## RedHat Ansible Boot Camp homework assignment
+## Playbook have been written as a PoC for a 3Tier Application deployment
+## All playbook have been written via Ansible Core and used in Ansible Tower
+
+## Created a written by Paul Greenbank - Technical Consultant for Open System Specialists
+
+## Role description:
+#
+# This role was created as it was found that once the RedHat Openstack Lab was shutdown and restarted
+# the instances were not started by default.
+# This was not included in the 3Tier Application deployment but was called both via the CLI and added as 
+# an Ansible Tower job as an adhoc job.  
+#
 
 # Start Openstack server instance
 

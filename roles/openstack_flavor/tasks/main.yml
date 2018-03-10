@@ -1,4 +1,22 @@
 ---
+## RedHat Ansible Boot Camp homework assignment
+## Playbook have been written as a PoC for a 3Tier Application deployment
+## All playbook have been written via Ansible Core and used in Ansible Tower
+
+## Created a written by Paul Greenbank - Technical Consultant for Open System Specialists
+
+## Role description:
+#
+# This role configures the instance sizing `flavor` for the server instances deployed
+# into the OpenStack environment for the 3Tier Application.
+# All servers are deployed to the same specifications.
+#
+
+## Role enhancements post PoC:
+#
+# This could be variablized and even extended into a nested list this would allow for
+# the different components to be deployed into more customized sizing.
+#
 
 # Setup Openstack Nova flavor for container deployment
 

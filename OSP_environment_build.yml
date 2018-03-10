@@ -1,4 +1,27 @@
 ---
+## RedHat Ansible Boot Camp homework assignment
+## Playbook have been written as a PoC for a 3Tier Application deployment
+## All playbook have been written via Ansible Core and used in Ansible Tower
+
+## Created a written by Paul Greenbank - Technical Consultant for Open System Specialists
+
+## Playbook description:
+#
+# Playbook is run from the jumpbox inventory group which contains a server with access to the OpenStack 
+# environment. The components are then deployed to configure a new OpenStack cloud to deploy the instances
+# and ultimately the 3Tier Application into.
+# Once the OpenStack Cloud is deployed 3 tasks are called to deploy the required OpenStack instances, these 
+# are contolled via 3 seperate variable files, one for each component of the application.  
+#
+
+## Playbook enhancements post PoC:
+#
+# Variablization for the `openstack_instance` role to use `with_subelements` would reduce the duplication of calling
+# this role 3 seperate times, it would also allow for adding more components to the application without changing the 
+# role code.
+# Tags should also be added so that specific components could be deployed without calling the entire instance build 
+# playbook, this would be benefical if you were to add more `apps` servers should demand grow.
+#
 
 # Playbook to create Openstack instances, setup networking and security
 

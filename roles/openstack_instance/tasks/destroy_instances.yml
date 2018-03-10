@@ -1,4 +1,17 @@
 ---
+## RedHat Ansible Boot Camp homework assignment
+## Playbook have been written as a PoC for a 3Tier Application deployment
+## All playbook have been written via Ansible Core and used in Ansible Tower
+
+## Created a written by Paul Greenbank - Technical Consultant for Open System Specialists
+
+## Role description:
+#
+# This is used to tear down the provisioned OpenStack instances, it is used in the Ansible Tower
+# workflow if the deployment fails.
+# It can also be called from the CLI to do a cleanup if needed, the following playbook is included:
+#   - OSP_environment_destroy.yml
+#
 
 # Destroy Openstack server instance
 
